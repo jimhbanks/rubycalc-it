@@ -33,20 +33,32 @@ def mortgage_calc(loan_amount, interest_rate, loan_length)
   puts"your mortage payments are #{mortgage}"
 end  
 
+
+# def trip_calc(trip_distance, mpg, cost, speed)
+#  time = (distance / speed).round(2)
+#  if mpg > 60
+#    real_mpg = mpg - (speed - 60) * 2
+#  else 
+#    real_mpg = mpg
+#  end
+#  trip_cost = ((dtrip_distance / real_mpg) * cost).round(2)
+#  puts"trip will cost you £#{trip_cost} and take #{time} hours"
+# end
+
 def calc(math_func, num1, num2)
  case math_func
    when '+'
-     addition(number1, number2)
+     addition(num1, num2)
    when '-'
-     subtraction(number1, number2)
+     subtraction(num1, num2)
    when '*'
-     multiply(number1, number2)
+     multiply(num1, num2)
    when '/'
-     division(number1, number2)
+     division(num1, num2)
    when '**'
-     power_of(number1, number2)
+     power_of(num1, num2)
    else
-     puts"math funtion not supported, try again"
+     puts"math function not supported, try again"
      gets.chomp
    end
 end
@@ -56,37 +68,51 @@ def add_calc(num1)
 end
 
 def menu 
- print'would you like the (a)advanced, (b)basic, (bmi)bmi, (m)mortgage calc-it app?'
+ print'would you like the (a)advanced, (b)basic, (bmi)bmi, (m)mortgage calc-it app, or (q) quit?'
  calc_choice = gets.chomp
    if calc_choice == 'b'
      print'input first number'
-     number1 = gets.chomp.to_i
+     num1 = gets.chomp.to_i
      print'input math type'
      math_func = gets.chomp
      print'input second number'
-     number2 = gets.chomp.to_i
-     calc(math_func, number1, number2)
+     num2 = gets.chomp.to_i
+     calc(math_func, num1, num2)
+
    elsif calc_choice == 'a'
      print'input number'
      number1 = gets.chomp.to_i
-     add_calc(number1)
+     add_calc(num1)
+
+    elsif calc_choice == 'q'
+      print''
+
   elsif calc_choice == 'bmi'
       print'input height in cm'
       height = gets.chomp.to_i
       print'input weight in lbs'
       weight = gets.chomp.to_f
       bmi_calc(weight, height)
+
   elsif calc_choice == 'm'
       print'input loan amount'
-        loan_amount = gets.chomp.to_i
+        loan_amount = gets.chomp.to_f
       print'input interest rate'
         interest_rate = gets.chomp
-      print'input years to pay off'
+      print'input months to pay off'
         loan_length = gets.chomp
       mortgage_calc(loan_amount, interest_rate, loan_length)
+
+  # elsif calc_choice == 't'
+  #   print'how long is your trip?'
+  #     trip_distance = gets.chomp.to_i
+  #   print'whats your mpg?'
+  #     real_mpg = gets.chomp
+  #   print'cost of gallon'  
+      
     end
    end 
-
+menu
 
 
 
