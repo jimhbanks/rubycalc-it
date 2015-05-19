@@ -1,6 +1,3 @@
-
-
-
 def addition(num1, num2)
  puts num1 + num2
 end
@@ -72,38 +69,38 @@ end
 
 
 def menu 
- print'would you like the (a)advanced, (b)basic, (bmi)bmi, (m)mortgage calc-it app, or (q) quit?'
+ print'would you like the (a)advanced, (b)basic, (bmi)bmi, (m)mortgage calc-it app, or (q) quit? : '
  calc_choice = gets.chomp
    if calc_choice == 'b'
-     print'input first number'
+     print'input first number: '
      num1 = gets.chomp.to_i
-     print'input math type'
+     print'input math type: '
      math_func = gets.chomp
-     print'input second number'
+     print'input second number: '
      num2 = gets.chomp.to_i
      calc(math_func, num1, num2)
 
-   elsif calc_choice == 'a'
-     print'input number'
+  elsif calc_choice == 'a'
+     print'input number: '
      number1 = gets.chomp.to_i
      add_calc(num1)
 
-    elsif calc_choice == 'q'
+  elsif calc_choice == 'q'
       print''
 
   elsif calc_choice == 'bmi'
-      print'input height in cm'
+      print'input height in cm: '
       height = gets.chomp.to_f
-      print'input weight in lbs'
+      print'input weight in lbs: '
       weight = gets.chomp.to_f
       bmi_calc(weight, height)
 
   elsif calc_choice == 'm'
-      print'input loan amount'
+      print'input loan amount: '
         loan_amount = gets.chomp.to_f
-      print'input interest rate'
+      print'input interest rate: '
         interest_rate = gets.chomp.to_f
-      print'input months to pay off'
+      print'input months to pay off: '
         loan_length = gets.chomp.to_f
       mort_calc(loan_amount, interest_rate, loan_length)
 
