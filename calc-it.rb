@@ -1,3 +1,6 @@
+
+
+
 def addition(num1, num2)
  puts num1 + num2
 end
@@ -27,10 +30,10 @@ def bmi_calc(weight, height)
   puts"your bmi is #{bmi}"
 end
 
-def mortgage_calc(loan_amount, interest_rate, loan_length)
+def mort_calc(loan_amount, interest_rate, loan_length)
   mortgage = (loan_amount * ((interest_rate * ((1 + interest_rate) **loan_length)) / (((1+interest_rate)**loan_length
     )-1))).round(2)
-  puts"your mortage payments are #{mortgage}"
+  puts"your mortgage payments are #{mortgage}"
 end  
 
 
@@ -67,6 +70,7 @@ def add_calc(num1)
  square_root(num1)
 end
 
+
 def menu 
  print'would you like the (a)advanced, (b)basic, (bmi)bmi, (m)mortgage calc-it app, or (q) quit?'
  calc_choice = gets.chomp
@@ -89,7 +93,7 @@ def menu
 
   elsif calc_choice == 'bmi'
       print'input height in cm'
-      height = gets.chomp.to_i
+      height = gets.chomp.to_f
       print'input weight in lbs'
       weight = gets.chomp.to_f
       bmi_calc(weight, height)
@@ -98,10 +102,10 @@ def menu
       print'input loan amount'
         loan_amount = gets.chomp.to_f
       print'input interest rate'
-        interest_rate = gets.chomp
+        interest_rate = gets.chomp.to_f
       print'input months to pay off'
-        loan_length = gets.chomp
-      mortgage_calc(loan_amount, interest_rate, loan_length)
+        loan_length = gets.chomp.to_f
+      mort_calc(loan_amount, interest_rate, loan_length)
 
   # elsif calc_choice == 't'
   #   print'how long is your trip?'
@@ -113,6 +117,8 @@ def menu
     end
    end 
 menu
+
+
 
 
 
