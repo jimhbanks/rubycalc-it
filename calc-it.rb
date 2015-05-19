@@ -1,3 +1,5 @@
+# functions for each 'operator' / system
+
 def addition(num1, num2)
  puts num1 + num2
 end
@@ -45,6 +47,8 @@ end
 #  puts"trip will cost you £#{trip_cost} and take #{time} hours"
 # end
 
+# basic calc functions tied with operator
+
 def calc(math_func, num1, num2)
  case math_func
    when '+'
@@ -67,6 +71,7 @@ def add_calc(num1)
  square_root(num1)
 end
 
+# opening menu - elsif chomp inputs to functions above
 
 def menu 
  print'would you like the (a)advanced, (b)basic, (bmi)bmi, (m)mortgage calc-it app, or (q) quit? : '
@@ -103,6 +108,8 @@ def menu
       print'input months to pay off: '
         loan_length = gets.chomp.to_f
       mort_calc(loan_amount, interest_rate, loan_length)
+
+# broke
 
   # elsif calc_choice == 't'
   #   print'how long is your trip?'
